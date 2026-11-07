@@ -68,6 +68,7 @@ DVD 输出为 MPEG-PS 容器中的 MPEG-2 视频 + AC-3 音频。
 
 ## 打包与发布
 
-- AppImage / rpm / pacman：electron-builder。
+- AppImage / rpm：electron-builder。
 - deb：`scripts/build-deb.mjs` 使用 tar + ar 组装，避免依赖 fpm。
+- pacman：`scripts/build-pacman.mjs` 使用 bsdtar + zstd 生成标准 `.pkg.tar.zst`。
 - CI：推送 `v*` 标签触发 GitHub Actions，构建四种包并创建 Release，附 `SHA256SUMS`。

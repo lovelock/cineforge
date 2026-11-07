@@ -52,10 +52,24 @@ npm run dist
 
 - `*.AppImage`
 - `*.deb`
+- `*.rpm`
+- `*.pkg.tar.zst`（Arch）
 
 `dist` 先用 electron-builder 生成 AppImage 与 `linux-unpacked`，再用 `scripts/build-deb.mjs` 以 tar/ar 组装 deb，规避 electron-builder 自带 fpm 在 Arch 系缺少 `libcrypt.so.1` 的问题。
 
-一次构建全部 Linux 格式（AppImage、rpm、pacman，deb 由 `scripts/build-deb.mjs` 生成）：
+Arch 本地打包：
+
+```bash
+npm -w apps/electron run dist:arch
+```
+
+生成 `apps/electron/release/cineforge-<version>-1-x86_64.pkg.tar.zst`，安装：
+
+```bash
+sudo pacman -U apps/electron/release/cineforge-*-x86_64.pkg.tar.zst
+```
+
+一次构建全部 Linux 格式（AppImage、rpm；deb 与 pacman 由 `scripts/` 下的脚本生成）：
 
 ```bash
 npm -w apps/electron run dist:all
