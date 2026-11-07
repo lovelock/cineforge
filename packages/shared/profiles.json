@@ -1,0 +1,164 @@
+[
+  {
+    "id": "dvd",
+    "type": "dvd",
+    "label": "DVD 光盘 (MPEG-2)",
+    "group": "disc",
+    "container": "mpeg",
+    "extension": ".mpg",
+    "kind": "video"
+  },
+  {
+    "id": "mp4",
+    "type": "standard",
+    "label": "MP4 (H.264 / AAC)",
+    "group": "video",
+    "container": "mp4",
+    "extension": ".mp4",
+    "kind": "video",
+    "faststart": true,
+    "video": {
+      "encoder": "libx264",
+      "args": ["-crf", "20", "-preset", "medium"],
+      "accept": ["h264", "hevc", "av1", "mpeg4"]
+    },
+    "audio": {
+      "encoder": "aac",
+      "args": ["-b:a", "192k"],
+      "accept": ["aac", "mp3"]
+    }
+  },
+  {
+    "id": "mkv",
+    "type": "standard",
+    "label": "MKV (H.264 / AAC)",
+    "group": "video",
+    "container": "matroska",
+    "extension": ".mkv",
+    "kind": "video",
+    "video": {
+      "encoder": "libx264",
+      "args": ["-crf", "20", "-preset", "medium"],
+      "accept": ["h264", "hevc", "av1", "vp9", "mpeg2video", "mpeg4"]
+    },
+    "audio": {
+      "encoder": "aac",
+      "args": ["-b:a", "192k"],
+      "accept": ["aac", "mp3", "ac3", "eac3", "opus", "vorbis", "flac", "pcm_s16le"]
+    }
+  },
+  {
+    "id": "mov",
+    "type": "standard",
+    "label": "MOV (H.264 / AAC)",
+    "group": "video",
+    "container": "mov",
+    "extension": ".mov",
+    "kind": "video",
+    "video": {
+      "encoder": "libx264",
+      "args": ["-crf", "20", "-preset", "medium"],
+      "accept": ["h264", "hevc", "mpeg4"]
+    },
+    "audio": {
+      "encoder": "aac",
+      "args": ["-b:a", "192k"],
+      "accept": ["aac", "mp3", "ac3", "pcm_s16le"]
+    }
+  },
+  {
+    "id": "avi",
+    "type": "standard",
+    "label": "AVI (MPEG-4 / MP3)",
+    "group": "video",
+    "container": "avi",
+    "extension": ".avi",
+    "kind": "video",
+    "video": {
+      "encoder": "mpeg4",
+      "args": ["-q:v", "4"],
+      "accept": ["mpeg4", "mjpeg"]
+    },
+    "audio": {
+      "encoder": "libmp3lame",
+      "args": ["-b:a", "192k"],
+      "accept": ["mp3", "pcm_s16le"]
+    }
+  },
+  {
+    "id": "webm",
+    "type": "standard",
+    "label": "WebM (VP9 / Opus)",
+    "group": "video",
+    "container": "webm",
+    "extension": ".webm",
+    "kind": "video",
+    "video": {
+      "encoder": "libvpx-vp9",
+      "args": ["-crf", "32", "-b:v", "0"],
+      "accept": ["vp9", "vp8", "av1"]
+    },
+    "audio": {
+      "encoder": "libopus",
+      "args": ["-b:a", "128k"],
+      "accept": ["opus", "vorbis"]
+    }
+  },
+  {
+    "id": "mp3",
+    "type": "standard",
+    "label": "MP3 音频",
+    "group": "audio",
+    "container": "mp3",
+    "extension": ".mp3",
+    "kind": "audio",
+    "audio": {
+      "encoder": "libmp3lame",
+      "args": ["-q:a", "2"],
+      "accept": ["mp3"]
+    }
+  },
+  {
+    "id": "m4a",
+    "type": "standard",
+    "label": "M4A 音频 (AAC)",
+    "group": "audio",
+    "container": "mp4",
+    "extension": ".m4a",
+    "kind": "audio",
+    "faststart": true,
+    "audio": {
+      "encoder": "aac",
+      "args": ["-b:a", "192k"],
+      "accept": ["aac"]
+    }
+  },
+  {
+    "id": "flac",
+    "type": "standard",
+    "label": "FLAC 无损音频",
+    "group": "audio",
+    "container": "flac",
+    "extension": ".flac",
+    "kind": "audio",
+    "audio": {
+      "encoder": "flac",
+      "args": [],
+      "accept": ["flac"]
+    }
+  },
+  {
+    "id": "wav",
+    "type": "standard",
+    "label": "WAV 音频 (PCM)",
+    "group": "audio",
+    "container": "wav",
+    "extension": ".wav",
+    "kind": "audio",
+    "audio": {
+      "encoder": "pcm_s16le",
+      "args": [],
+      "accept": ["pcm_s16le"]
+    }
+  }
+]

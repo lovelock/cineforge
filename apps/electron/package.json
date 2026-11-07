@@ -1,0 +1,17 @@
+{
+  "name": "cineforge",
+  "version": "0.1.0",
+  "private": true,
+  "author": "lovelock <happyhackerwqc@foxmail.com>",
+  "description": "影匠 Cineforge — Linux 桌面音视频格式转换器，调用本机 ffmpeg，支持 MTS 转 DVD-Video",
+  "homepage": "https://github.com/lovelock/cineforge",
+  "desktopName": "cineforge",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "concurrently -k \"tsup --watch\" \"wait-on dist/main/index.js http://localhost:5173 && VITE_DEV_SERVER_URL=http://localhost:5173 electronmon .\"",
+    "dev:container": "concurrently -k \"tsup --watch\" \"wait-on dist/main/index.js http://localhost:5173 && VITE_DEV_SERVER_URL=http://localhost:5173 electron --no-sandbox --disable-gpu .\"",
+    "dist": "electron-builder --linux AppImage && node ../../scripts/build-deb.mjs",
+    "dist:all": "electron-builder --linux AppImage rpm pacman --publish never && node ../../scripts/build-deb.mjs"
+  }
+}

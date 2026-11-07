@@ -1,0 +1,28 @@
+{
+  "name": "cineforge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "build": "npm -w apps/electron run build && npm -w apps/ui run build",
+    "dev": "concurrently -k \"npm -w apps/ui run dev\" \"npm -w apps/electron run dev\"",
+    "dev:container": "concurrently -k \"npm -w apps/ui run dev\" \"npm -w apps/electron run dev:container\"",
+    "dist": "npm run build && npm -w apps/electron run dist"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "concurrently": "^10.0.6",
+    "electron": "45.2.3",
+    "electron-builder": "^26.18.0",
+    "electronmon": "^2.0.4",
+    "tsup": "^9.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wait-on": "^9.5.1"
+  }
+}

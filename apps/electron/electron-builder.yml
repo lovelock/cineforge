@@ -1,0 +1,18 @@
+appId: io.github.lovelock.cineforge
+productName: 影匠
+executableName: cineforge
+directories:
+  output: release
+files:
+  - dist/**/*
+  - package.json
+linux:
+  target:
+    - AppImage
+    - deb
+  category: AudioVideo
+  maintainer: lovelock <happyhackerwqc@foxmail.com>
+  syncDesktopName: true
+  icon: icon.png
+appImage:
+  artifactName: cineforge-${version}-${arch}.${ext}
