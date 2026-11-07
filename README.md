@@ -9,7 +9,7 @@ Linux 桌面音视频格式转换工具。调用**本机安装的 ffmpeg**，只
 ## 依赖
 
 - Linux（X11 / Wayland）
-- Node.js 20+（开发用）
+- Node.js 24+（开发用，版本见 `.mise.toml` / `.nvmrc`）
 - ffmpeg / ffprobe ≥ 6.0，需包含 `mpeg2video`、`ac3` 编码器；通用格式还需要 `libx264`、`aac`、`libmp3lame`、`libvpx-vp9`、`libopus`、`flac`
 
 检查：
