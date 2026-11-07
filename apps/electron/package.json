@@ -5,6 +5,10 @@
   "author": "lovelock <happyhackerwqc@foxmail.com>",
   "description": "影匠 Cineforge — Linux 桌面音视频格式转换器，调用本机 ffmpeg，支持 MTS 转 DVD-Video",
   "homepage": "https://github.com/lovelock/cineforge",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovelock/cineforge.git"
+  },
   "desktopName": "cineforge",
   "main": "dist/main/index.js",
   "scripts": {
